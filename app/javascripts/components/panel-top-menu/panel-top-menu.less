@@ -1,0 +1,22 @@
+@import '~settings';
+
+.panelTopMenu {
+    background: darkgreen;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 @box;
+        li {
+            color: #BEFFBA;
+            height: @box;
+            line-height: @box;
+            cursor: pointer;
+            &.active {
+                color: #FFF;
+            }
+            .iconBox {
+                margin-right: @box/2;
+            }
+        }
+    }
+}

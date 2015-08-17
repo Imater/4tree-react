@@ -1,0 +1,22 @@
+@import '~settings';
+
+.panels {
+    position: absolute;
+    bottom: 0;
+    top: @headerHeight;
+    height: auto;
+    width: 100%;
+    .panelsWrapper {
+        background: #EEE;
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .panelsRow {
+        display: table-row;
+        .panel {
+            display: table-cell;
+            vertical-align: top;
+        }
+    }
+}

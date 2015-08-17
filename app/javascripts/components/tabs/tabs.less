@@ -1,0 +1,45 @@
+@import '~settings';
+
+.tabs {
+    background: #000;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            border-right: 1px solid #444;
+            a {
+                display: block;
+                vertical-align: middle;
+                white-space: nowrap;
+                .iconBox {
+                    width: @tabHeight;
+                    height: @tabHeight;
+                    line-height: @tabHeight;
+                    text-align: center;
+                    display: inline-block;
+                    &.notPinned {
+                        width: @tabHeight - @tabNotPinnedSmallerPx;
+                        height: @tabHeight - @tabNotPinnedSmallerPx;
+                        line-height: @tabHeight - @tabNotPinnedSmallerPx;
+                        margin: @tabNotPinnedSmallerPx/2;
+                        .icon {
+                            font-size: 0.9em;
+                            line-height: 0.9em;
+                        }
+                    }
+                    .icon {
+                        color: inherit;
+                    }
+                }
+                .title {
+                    color: #EEE;
+                    display: inline-block;
+                    line-height: @box;
+                    margin-right: @box/2;
+                }
+            }
+        }
+    }
+}

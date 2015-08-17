@@ -1,0 +1,25 @@
+@import '~settings';
+
+.menuTitle {
+    color: #DDD;
+    height: @box;
+    line-height: @box;
+    cursor: pointer;
+    .title {
+    }
+    .iconBox {
+        margin-left: @box/2;
+        padding: 0 @box/2;
+        .icon {
+            opacity: 0;
+        }
+    }
+    .iconBoxDown {
+        margin-left: @box/4;
+    }
+    &:hover {
+        .icon {
+            opacity: 1;
+        }
+    }
+}

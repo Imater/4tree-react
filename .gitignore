@@ -1,0 +1,16 @@
+.idea
+.DS_Store
+.tmp
+ckfinder
+pub/_thumbs
+uploads
+pub
+Thumbs.db
+Tools/
+node_modules/
+webstat/
+app/bower_components
+.tmp/
+build
+server/logs/
+apidoc/
