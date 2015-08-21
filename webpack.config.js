@@ -13,7 +13,7 @@ module.exports = {
     target: "web",
     resolve: {
         alias: {
-            "settings.less": path.resolve(ROOT_PATH, 'app/styles/settings.less')
+            "settings.less": path.resolve(ROOT_PATH, 'app/javascripts/settings.less')
         },
         extensions: ['', '.js', '.jsx']
     },

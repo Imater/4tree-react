@@ -1,19 +1,17 @@
 import axios from 'axios';
-import TreeNodesActions from '../actions/tree-nodes.actions';
+import TreeNodesActions from '../actions/treeNodes.actions';
 // sources/SearchSource.js
 
 const TreeSource = {
     performSearch: {
         // remotely fetch something (required)
         remote(state) {
-            console.info('loading....................');
             return axios.get(`http://localhost:5005/api/db/tree`);
         },
 
         // this function checks in our local cache first
         // if the value is present it'll use that instead (optional).
         local(state) {
-            console.info('local....................');
             return null;
             return state.results[state.value] ? state.results : null;
         },

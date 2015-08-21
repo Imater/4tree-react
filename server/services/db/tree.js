@@ -20,7 +20,6 @@ tree.getAllTree = function (req, cb) {
         }
     })
         .then(function (treeNodes) {
-            console.info(treeNodes.length);
             cb(null, treeNodes);
         }).catch(cb);
 };

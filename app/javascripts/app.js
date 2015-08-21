@@ -2,12 +2,12 @@
  * App Bootstrap
  */
 
-require('../styles/app.less');
+require('./App.less');
 require('font-awesome/css/font-awesome.css');
 
 import 'es6-shim';
 import 'whatwg-fetch';
-import MainApp from './components/MainApp.jsx';
+import MainApp from './components/MainApp';
 import React from 'react';
 
 // Start the main app
