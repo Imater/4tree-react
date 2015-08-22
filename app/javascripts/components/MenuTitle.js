@@ -5,16 +5,12 @@ import Icon from './Icon';
 require('./MenuTitle.less');
 
 export default class MenuTitle extends React.Component{
-    toggleMenu(panelId){
-        PanelsActions.toggleMenu({
-            panelId: panelId
-        });
-    }
-
     render(){
         var panelId = this.props.panelId;
+        const { actions, id } = this.props;
+        console.info(1,id);
         return (
-            <div className='menuTitle' onClick={this.toggleMenu.bind(null, panelId)}>
+            <div className='menuTitle' onClick={()=>{actions.openPanelMenu.bind(null, id)}}>
                 <span className='iconBox'>
                     <Icon name={this.props.icon} />
                 </span>

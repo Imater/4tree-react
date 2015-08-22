@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Panel from './Panel';
+import * as panelsActions from '../actions/panelsActions';
 
 require('./Panels.less');
 
@@ -13,6 +14,7 @@ require('./Panels.less');
 export default class Panels extends React.Component{
     render() {
         const { panelsStore: { panels }, dispatch } = this.props;
+        const actions = bindActionCreators(panelsActions, dispatch);
         return (
             <div className='panels'>
                 <div className='panelsWrapper'>
@@ -20,7 +22,7 @@ export default class Panels extends React.Component{
                     {
                         panels.map((panel) => {
                             return (
-                                <Panel key={panel.id} {...panel}/>
+                                <Panel key={panel.id} {...panel} actions={actions}/>
                             );
                         })
                     }

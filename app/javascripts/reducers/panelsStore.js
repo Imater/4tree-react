@@ -1,4 +1,4 @@
-import { ADD_TREE_NODE } from '../constants/ActionTypes';
+import { OPEN_PANEL_MENU } from '../constants/ActionTypes';
 
 const initialState = {
     panels: [
@@ -29,13 +29,16 @@ const initialState = {
 
 export default function panelsStore(state = initialState, action) {
     switch (action.type) {
-        case ADD_TREE_NODE:
-            var newTree = {};
-        newTree[action.tree.id] = action.tree
-        return {
-            ...state,
-            ...newTree
-        };
+        case OPEN_PANEL_MENU:
+            var panels = state.panels.slice();
+        console.info(action)
+            panels.map(function(panel){
+                if(panel.id === action.payload.panelId){
+                    panel.menuOpen = !panel.menuOpen;
+                }
+            })
+            console.info('panels', panels);
+            return { panels };
         default:
             return state;
     }

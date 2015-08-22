@@ -101,9 +101,8 @@ class PanelTopMenu extends React.Component{
         return (
             <div className='panelTopMenu'>
                 <MenuTitle
+                    {...this.props}
                     icon={currentItem.icon}
-                    panelId={this.props.panelId}
-                    menuOpen={this.props.menuOpen}
                     title={currentItem.title}
                 />
                 {renderMenu}
