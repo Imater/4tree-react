@@ -1,0 +1,25 @@
+@import '~settings';
+
+.treeContainer {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: @box;
+  }
+  .iconBox {
+    display: inline-block;
+    background: green;
+    width: @box;
+    height: @box;
+    vertical-align: middle;
+    line-height: @box;
+    text-align: center;
+    .icon {
+      color: #FFF;
+    }
+  }
+  .title {
+    padding-left: @box/2;
+  }
+}

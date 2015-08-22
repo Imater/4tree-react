@@ -5,16 +5,16 @@ import MainSection from '../components/MainSection';
 import * as treeNodesActions from '../actions/treeNodesActions';
 
 @connect(state => ({
-    treeNode: state.treeNode
+  treeNode: state.treeNode
 }))
 export default class TreeNodeApp extends Component {
-    render() {
-        const { treeNode: { tree }, dispatch } = this.props;
-        const actions = bindActionCreators(treeNodesActions, dispatch);
-        return (
-            <div>
-                <MainSection count={tree} actions={actions} />
-            </div>
-        );
-    }
+  render() {
+    const { treeNode: { tree }, dispatch } = this.props;
+    const actions = bindActionCreators(treeNodesActions, dispatch);
+    return (
+      <div>
+        <MainSection count={tree} actions={actions} />
+      </div>
+    );
+  }
 }

@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
-    entry: "./app/javascripts/app.js",
+    entry: "./app/src/App.jsx",
     devtool: 'eval-source-map',
     output: {
         path: path.resolve(ROOT_PATH, '.tmp/build'),
@@ -13,7 +13,7 @@ module.exports = {
     target: "web",
     resolve: {
         alias: {
-            "settings.less": path.resolve(ROOT_PATH, 'app/javascripts/settings.less')
+            "settings.less": path.resolve(ROOT_PATH, 'app/src/settings.less')
         },
         extensions: ['', '.js', '.jsx']
     },

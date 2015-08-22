@@ -7,10 +7,9 @@ require('./MenuTitle.less');
 export default class MenuTitle extends React.Component{
     render(){
         var panelId = this.props.panelId;
-        const { actions, id } = this.props;
-        console.info(1,id);
+        const { actions: { openPanelMenu }, id } = this.props;
         return (
-            <div className='menuTitle' onClick={()=>{actions.openPanelMenu.bind(null, id)}}>
+            <div className='menuTitle' onClick={()=>openPanelMenu(id)}>
                 <span className='iconBox'>
                     <Icon name={this.props.icon} />
                 </span>
