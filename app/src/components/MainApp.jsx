@@ -2,7 +2,8 @@ import React from 'react/addons';
 
 import { createStore, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
+import { DevTools, DebugPanel } from 'redux-devtools/lib/react';
+import DiffMonitor from 'redux-devtools-diff-monitor';
 
 import Panels from './Panels';
 import MainContainer from './MainContainer';
@@ -28,10 +29,7 @@ class MainApp extends React.Component{
             <Tabs />
             <MenuTop />
             <Panels />
-            <DebugPanel top right bottom>
-              <DevTools store={store}
-                monitor={LogMonitor} />
-            </DebugPanel>
+            <DevTools store={store} monitor={DiffMonitor} />
           </MainContainer>
           }
         </Provider>

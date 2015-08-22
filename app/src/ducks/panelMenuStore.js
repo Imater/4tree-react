@@ -1,5 +1,3 @@
-import { ADD_TREE_NODE } from '../constants/ActionTypes';
-
 const initialState = {
     menuItems: {
       big: [
