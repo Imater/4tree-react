@@ -1,3 +1,5 @@
+import { createAction } from 'redux-actions';
+
 export const OPEN_PANEL_MENU = 'OPEN_PANEL_MENU';
 
 const initialState = {
@@ -28,6 +30,7 @@ const initialState = {
 };
 
 export default function panelsStore(state = initialState, action) {
+  console.info(JSON.stringify(action));
   switch (action.type) {
     case OPEN_PANEL_MENU:
       return Object.assign({}, state, {
@@ -43,11 +46,23 @@ export default function panelsStore(state = initialState, action) {
   }
 }
 
+const WebUtils = {
+  get: (panelId) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(function(){
+        console.info('resolve');
+        resolve({panelId: panelId});
+      }, 4002);
+    });
+  }
+}
+
+export const openPanelMenu1 = createAction('OPEN_PANEL_MENU1', WebUtils.get)
+
 export function openPanelMenu(panelId) {
+  console.info('finish')
   return {
     type: OPEN_PANEL_MENU,
-    payload: {
-      panelId: panelId
-    }
+    payload: WebUtils.get(panelId)
   }
 }
